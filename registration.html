@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f2f4f8; margin: 0; padding: 40px 16px; }
+        .container { max-width: 420px; margin: auto; background: white; padding: 28px; border-radius: 10px; box-shadow: 0 4px 18px #0001; }
+        h2 { text-align: center; color: #24324a; }
+        label { display: block; margin: 14px 0 6px; }
+        input { box-sizing: border-box; width: 100%; padding: 11px; border: 1px solid #ccd2dc; border-radius: 5px; }
+        button { width: 100%; margin-top: 20px; padding: 12px; border: 0; border-radius: 5px; background: #2166d1; color: white; font-size: 16px; cursor: pointer; }
+        #message { margin-top: 14px; color: #18733b; text-align: center; }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h2>User Registration Form</h2>
+        <form id="registrationForm">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" minlength="6" required>
+            <button type="submit">Register</button>
+            <p id="message" role="status"></p>
+        </form>
+    </main>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            document.getElementById('message').textContent = 'Registration form submitted successfully!';
+            this.reset();
+        });
+    </script>
+</body>
+</html>
